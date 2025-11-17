@@ -32,8 +32,6 @@ export const fetchProductCatalog = (): Promise<orderType[]> => {
     });
 }
 
-// Resolve the Promise with an array of reviews after a 1.5-second delay.
-// Reject the Promise randomly with an error message, e.g., "Failed to fetch reviews for product ID ${productId}".
 export const fetchProductReviews = (productId: number): Promise<orderType[]> =>{
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -49,9 +47,6 @@ export const fetchProductReviews = (productId: number): Promise<orderType[]> =>{
     });
 }
 
-// : Simulates fetching a sales report with totalSales, unitsSold, and averagePrice.
-// Resolve the Promise with a mock sales report after a 1-second delay.
-// Reject randomly with an error message, e.g., "Failed to fetch sales report".
 export const fetchSalesReport = (itemName:string): Promise<orderSaleType[]>=>{
     return new Promise((resolve,reject)=>{
         setTimeout(()=>{
@@ -63,11 +58,10 @@ export const fetchSalesReport = (itemName:string): Promise<orderSaleType[]>=>{
                     } else {
                         reject('Product not found');
                     }
-                    // resolve([{ orderId: found.orderId, id: found?.id, unitSale: found?.unitSale, price: found?.price },]);
                     return;
                 }
             }
-            reject(`Failed to fetch reviews for product ID ${itemName}`);
+            reject(`Failed to fetch sales report for ${itemName}`);
         },1000)
     })
 }
