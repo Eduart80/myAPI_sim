@@ -1,5 +1,6 @@
 import { fetchProductCatalog,
-        fetchProductReviews
+        fetchProductReviews,
+        fetchSalesReport
  } from './apiSimulator';
 
  // get all
@@ -18,3 +19,14 @@ fetchProductReviews(2)
     .catch((err)=>{
         console.log(err);
     })
+// get sale by id
+fetchSalesReport('Book')
+    .then((res)=>{
+        res.map((res)=> {
+            console.log(`Book sold: ${res.unitSale}, with a price of ${res.price}`)
+        })
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+
