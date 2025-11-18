@@ -20,7 +20,9 @@ import { fetchProductCatalog,
             console.log('Error in get all data api ',err);
             }
         })
-        .finally(()=> console.log("Get All data from api is complete."))
+        .finally(()=>{
+             console.log("Get All data from api is complete.")
+             console.log('\n ' )})
 }
 getProduct()
 
@@ -41,7 +43,8 @@ async function productReport(params:number) {
             }
         
     })
-    .finally(()=> console.log("Get data by ID api is complete."))
+    .finally(()=>{ console.log("Get data by ID api is complete.")
+                   console.log('\n ' )})
 }
 productReport(2)
 
@@ -58,11 +61,13 @@ async function saleReport(params:string) {
          if (err instanceof NetworkError) {
                 console.log('Network error:', err.message);
             } else if (err instanceof DataError) {
-                console.log('Data error:', err.message);
+                console.log('Data error:', err.message );
             } else {
             console.log('Error in sale report api ',err);
             }
     })
-    .finally(()=> console.log("Get sale by item name report from api is complete."))
+    .finally(()=>{
+        console.log("Get sale by item name report from api is complete.") 
+        console.log('\n ' )})
 }
 saleReport('Book')

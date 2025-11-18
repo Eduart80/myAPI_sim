@@ -22,8 +22,6 @@ var fetchProductCatalog = function () {
     });
 };
 exports.fetchProductCatalog = fetchProductCatalog;
-// Resolve the Promise with an array of reviews after a 1.5-second delay.
-// Reject the Promise randomly with an error message, e.g., "Failed to fetch reviews for product ID ${productId}".
 var fetchProductReviews = function (productId) {
     return new Promise(function (resolve, reject) {
         setTimeout(function () {
@@ -39,9 +37,6 @@ var fetchProductReviews = function (productId) {
     });
 };
 exports.fetchProductReviews = fetchProductReviews;
-// : Simulates fetching a sales report with totalSales, unitsSold, and averagePrice.
-// Resolve the Promise with a mock sales report after a 1-second delay.
-// Reject randomly with an error message, e.g., "Failed to fetch sales report".
 var fetchSalesReport = function (itemName) {
     return new Promise(function (resolve, reject) {
         setTimeout(function () {
@@ -62,7 +57,7 @@ var fetchSalesReport = function (itemName) {
                 if (typeof state_1 === "object")
                     return state_1.value;
             }
-            reject("Failed to fetch reviews for product ID ".concat(itemName));
+            reject("Failed to fetch sales report for ".concat(itemName));
         }, 1000);
     });
 };
