@@ -110,7 +110,7 @@ function saleReport(params) {
                 case 0: return [4 /*yield*/, (0, apiSimulator_1.fetchSalesReport)(params)
                         .then(function (res) {
                         res.map(function (res) {
-                            console.log("Book sold: ".concat(res.unitSale, ", with a price of ").concat(res.price));
+                            console.log("".concat(params, " sold: ").concat(res.unitSale, ", with a price of ").concat(res.price));
                         });
                     })
                         .catch(function (err) {
@@ -135,4 +135,4 @@ function saleReport(params) {
         });
     });
 }
-saleReport('Book');
+saleReport('Pen');

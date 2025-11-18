@@ -54,7 +54,7 @@ async function saleReport(params:string) {
    await fetchSalesReport(params)
     .then((res)=>{
         res.map((res)=> {
-            console.log(`Book sold: ${res.unitSale}, with a price of ${res.price}`)
+            console.log(`${params} sold: ${res.unitSale}, with a price of ${res.price}`)
         })
     })
     .catch((err)=>{
@@ -70,4 +70,4 @@ async function saleReport(params:string) {
         console.log("Get sale by item name report from api is complete.") 
         console.log('\n ' )})
 }
-saleReport('Book')
+saleReport('Pen')
