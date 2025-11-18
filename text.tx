@@ -6,11 +6,12 @@ Write a Function to Handle API Calls and Display Data: //done
 Use fetchProductCatalog() to fetch product details and display them. //done
 For each product, fetch the reviews using fetchProductReviews(productId). //done
 After fetching products and reviews, retrieve the sales report using fetchSalesReport(). //done
-Implement Error Handling Using Promises:
+Implement Error Handling Using Promises://done
 
-Use .catch() to handle any errors from fetchProductCatalog(), fetchProductReviews(), and fetchSalesReport().
-Display error messages to the console if any of the calls fail.
+Use .catch() to handle any errors from fetchProductCatalog(), fetchProductReviews(), and fetchSalesReport().//done
+Display error messages to the console if any of the calls fail.//done
 Use .finally() to log a message indicating that all API calls have been attempted. //done
+
 Part 4: Custom Error Classes
 Create Custom Error Classes for different error scenarios:
 NetworkError for network-related issues.

@@ -2,6 +2,7 @@ import { fetchProductCatalog,
         fetchProductReviews,
         fetchSalesReport
  } from './apiSimulator';
+ import { NetworkError, DataError } from './errors';
 
  // get all
  async function getProduct() {
@@ -11,7 +12,13 @@ import { fetchProductCatalog,
          console.log(data);
         })
         .catch((err)=>{
+            if (err instanceof NetworkError) {
+                console.log('Network error:', err.message);
+            } else if (err instanceof DataError) {
+                console.log('Data error:', err.message);
+            } else {
             console.log('Error in get all data api ',err);
+            }
         })
         .finally(()=> console.log("Get All data from api is complete."))
 }
@@ -25,7 +32,14 @@ async function productReport(params:number) {
         console.log(res);
     })
     .catch((err)=>{
-        console.log('Error in get by id api ', err);
+          if (err instanceof NetworkError) {
+                console.log('Network error:', err.message);
+            } else if (err instanceof DataError) {
+                console.log('Data error:', err.message);
+            } else {
+            console.log('Error in get by id api ', err);
+            }
+        
     })
     .finally(()=> console.log("Get data by ID api is complete."))
 }
@@ -41,7 +55,13 @@ async function saleReport(params:string) {
         })
     })
     .catch((err)=>{
-        console.log('Error in sale report api ',err);
+         if (err instanceof NetworkError) {
+                console.log('Network error:', err.message);
+            } else if (err instanceof DataError) {
+                console.log('Data error:', err.message);
+            } else {
+            console.log('Error in sale report api ',err);
+            }
     })
     .finally(()=> console.log("Get sale by item name report from api is complete."))
 }
