@@ -27,9 +27,9 @@ use the function getProduct(), to retreive all the data in the array.
 ```
 Get a productReport(param) by using id, for example : 2
 ```js
-Book sold: 2, with a price of 24.99
+[ { id: 2, items: 'Laptop', total: 1200 } ]
 ```
 Get saleReport(param) by usin items name, "Book":
 ```js
-[ { id: 2, items: 'Laptop', total: 1200 } ]
+Book sold: 2, with a price of 24.99
 ```
